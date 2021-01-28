@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="images/icon.png">
-        <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="/manifest.json">
     </head>
     <body>
         <img id="img1" src="images/bmi2.jpg" alt="写真">
@@ -41,6 +41,13 @@
         <h3 id="result2"></h3>
     </div>
     <script type="text/javascript" src="index.js">
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+        window.addEventListener("load", async () => {
+            await navigator.serviceWorker.register("/sw.js");
+        })
+    }
     </script>
     </body>
 </html>
